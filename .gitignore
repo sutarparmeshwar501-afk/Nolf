@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# tests and coverage
+/coverage
+
+# Next.js
+/.next
+/out
+
+# production
+/build
+
+# local environment files
+.env*
+!.env.example
+
+# logs and package manager files
+*.log
+.DS_Store
+
+# TypeScript incremental cache
+*.tsbuildinfo
+
+# Local upgrade backups
+*.before-security-upgrade
+*.before-*

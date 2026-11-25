@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #111111;
+  --color-paper: #ffffff;
+  --color-line: #e4e4e2;
+  --color-muted: #6b6b68;
+  --color-soft: #f6f6f4;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+:root {
+  color-scheme: light;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #111111;
+  color: #ffffff;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 4px;
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  color: #111111;
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: 0.19em;
+  line-height: 1;
+}
+
+.nav-link {
+  position: relative;
+  padding-block: 0.45rem;
+  color: #565653;
+  font-size: 0.76rem;
+  letter-spacing: 0.005em;
+  transition: color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link-current {
+  color: #111111;
+}
+
+.nav-link-current::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.menu-toggle {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-line);
+  background: #ffffff;
+  color: #111111;
+  transition: background-color 160ms ease;
+}
+
+.menu-toggle:hover {
+  background: var(--color-soft);
+}
+
+.mobile-menu {
+  display: none;
+  border-top: 1px solid var(--color-line);
+  background: #ffffff;
+}
+
+.mobile-menu.is-open {
+  display: block;
+}
+
+.mobile-nav-link {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-line);
+  color: #222222;
+  font-size: 0.95rem;
+}
+
+.mobile-nav-link:last-child {
+  border-bottom: 0;
+}
+
+.footer-link {
+  width: fit-content;
+  color: #555552;
+  transition: color 160ms ease;
+}
+
+.footer-link:hover {
+  color: #111111;
+}
+
+.eyebrow {
+  color: #686864;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  transform: translateY(-180%);
+  border: 1px solid #111111;
+  background: #ffffff;
+  padding: 0.75rem 1rem;
+  color: #111111;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.prose-copy h2 {
+  margin-top: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.prose-copy h2:first-child {
+  margin-top: 0;
+}
+
+.prose-copy p,
+.prose-copy li {
+  color: #565653;
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+.prose-copy p {
+  margin-top: 0.8rem;
+}
+
+.prose-copy ul {
+  margin-top: 0.8rem;
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.prose-copy a {
+  color: #111111;
+  text-decoration: underline;
+  text-decoration-color: #9a9a96;
+  text-underline-offset: 0.2em;
+}
+
+.prose-copy a:hover {
+  text-decoration-color: #111111;
+}
+
+.motion-enter {
+  animation: enter 650ms cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+.motion-enter-delay {
+  animation-delay: 100ms;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.text-link {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 0.65rem;
+  color: #111111;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: #b9b9b5;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color 160ms ease;
+}
+
+.text-link:hover {
+  text-decoration-color: #111111;
+}

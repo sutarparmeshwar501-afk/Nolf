@@ -1,0 +1,13 @@
+{
+  "routes": [
+    { "path": "/", "title": "Home" },
+    { "path": "/about", "title": "About Nolf" },
+    { "path": "/products", "title": "Products" },
+    { "path": "/technology", "title": "Technology" },
+    { "path": "/newsroom", "title": "Newsroom" },
+    { "path": "/careers", "title": "Careers" },
+    { "path": "/contact", "title": "Contact" },
+    { "path": "/privacy-policy", "title": "Privacy Policy" },
+    { "path": "/terms-of-service", "title": "Terms of Service" }
+  ]
+}
